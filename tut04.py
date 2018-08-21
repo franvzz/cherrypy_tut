@@ -7,7 +7,15 @@ import cherrypy
 class StringGenerator(object):
     @cherrypy.expose
     def index(self):
-        return "Hello world!"
+        return """<html>
+          <head></head>
+          <body>
+            <form method="get" action="generate">
+              <input type="text" value="8" name="length" />
+              <button type="submit">Give it now!</button>
+            </form>
+          </body>
+        </html>"""
 
     @cherrypy.expose
     def generate(self, length=8):
